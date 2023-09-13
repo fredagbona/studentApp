@@ -1,11 +1,11 @@
 <?php
     include __DIR__ . '/../configs/config.php';
-    include __DIR__ . '/../models/studentEntity.php';
+    include __DIR__ . '/../models/StudentEntity.php';
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $body = json_decode(file_get_contents("php://input"));
-    $student = new studentEntity($body->matricule, $body->nom, $body->prenom, $body->sexe, $body->dateDeNaissance, $body->telephone);
-    
+    $student = new StudentEntity($body->matricule, $body->nom, $body->prenom, $body->sexe, $body->dateDeNaissance, $body->telephone);
+
     if($student->save()){
         http_response_code(200);
         $data = array(

@@ -1,13 +1,13 @@
 <?php
 
     include __DIR__ . '/../configs/config.php';
-    include __DIR__ . '/../models/studentEntity.php';
-    
+    include __DIR__ . '/../models/StudentEntity.php';
+
     if ($_SERVER['REQUEST_METHOD'] === 'PUT') {
     $body = json_decode(file_get_contents("php://input"));
-    $student = new studentEntity($body->matricule, $body->nom, $body->prenom, $body->sexe, $body->dateDeNaissance, $body->telephone);
+    $student = new StudentEntity($body->matricule, $body->nom, $body->prenom, $body->sexe, $body->dateDeNaissance, $body->telephone);
     $matricule = isset($_GET['matricule']) ? $_GET['matricule'] : die(json_encode(array("error" => "Matricule non fourni")));
-    
+
     if($student->update($matricule)){
         http_response_code(200);
         $data = array(

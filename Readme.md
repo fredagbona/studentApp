@@ -1,14 +1,12 @@
-# Simple API for Students Manage 
+# Simple API for Students Manage
 
 It's a php-native api to perform CRUD operations on Student Entity
 
-### API Endpoints
-
+## API Endpoints
 
 Below are described the REST endpoints available that you can use to manage students
 
 - Get All Students and their sinformations
-
 
 ```php
 GET /api/reads.php
@@ -16,20 +14,17 @@ GET /api/reads.php
 
 - Get Single Student Informations by matricule
 
-
 ```php
 GET /api/read.php/?matricule=ST988942
 ```
 
 - Create Student
 
-
 ```sh
 POST /api/create.php
 ```
 
 Body
-
 
 ```json
 {
@@ -43,7 +38,6 @@ Body
 ```
 
 - Update Student Informations
-
 
 ```php
 PUT /api/update.php/?matricule=ST988942
@@ -64,13 +58,11 @@ Body
 
 - Delete Single Student
 
-
 ```php
 DELETE /api/delete.php/?matricule=ST988942
 ```
 
 ### Response Example
-
 
 ```php
 GET /api/reads.php
@@ -179,9 +171,7 @@ GET /api/reads.php
 ]
 ```
 
-
 ### Link to front-end part of App
-
 
 [Click here](https://github.com/fredagbona/frontStudentApp "Front-end part").
 
