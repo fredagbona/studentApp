@@ -2,8 +2,8 @@
 
     include "database.php";
 
-    class studentEntity{
-        
+    class StudentEntity{
+
         private $matricule;
         private $nom;
         private $prenom;
@@ -120,10 +120,10 @@
             $studentSave = $connexion->prepare($studentSaveQuery);
             if(
                 $studentSave->execute(array("$this->matricule",
-                "$this->nom", 
-                "$this->prenom", 
-                "$this->sexe", 
-                "$this->dateDeNaissance", 
+                "$this->nom",
+                "$this->prenom",
+                "$this->sexe",
+                "$this->dateDeNaissance",
                 "$this->telephone"
                 ))
             ){
@@ -131,7 +131,7 @@
             }else{
                 return false;
             }
-            
+
         }
 
         public function findByMatricule(){
@@ -160,11 +160,11 @@
             global $connexion;
             $updateUserQuery = "UPDATE Students SET matricule = ?, nom = ?, prenom = ?, sexe = ?, dateDeNaissance = ?, telephone = ? WHERE matricule = ?";
             $updateUser = $connexion->prepare($updateUserQuery);
-            if($updateUser->execute(array("$this->matricule", 
-            "$this->nom", 
-            "$this->prenom", 
+            if($updateUser->execute(array("$this->matricule",
+            "$this->nom",
+            "$this->prenom",
             "$this->sexe",
-            "$this->dateDeNaissance", 
+            "$this->dateDeNaissance",
             "$this->telephone",
             $matricule
             ))){

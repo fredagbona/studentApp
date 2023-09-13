@@ -1,11 +1,11 @@
 <?php
 
     include __DIR__ . '/../configs/config.php';
-    include __DIR__ . '/../models/studentEntity.php';
+    include __DIR__ . '/../models/StudentEntity.php';
 
     if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         $matricule = isset($_GET['matricule']) ? $_GET['matricule'] : die(json_encode(array("error" => "Matricule non fourni")));
-        $student = new studentEntity();
+        $student = new StudentEntity();
         $student->setMatricule($matricule);
         $student->findByMatricule();
         if ($student->getNom() != '') {
@@ -24,5 +24,5 @@
             echo json_encode(array("error" => "Etudiant non trouvé"));
         }
     }
-    
+
 ?>

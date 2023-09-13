@@ -10,7 +10,6 @@ try
     $connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }catch(PDOException $e){
     die("La connexion a échoué : ".$e->getMessage());
-    exit();
 }
 
 ?>

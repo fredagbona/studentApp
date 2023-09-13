@@ -1,14 +1,14 @@
 <?php
-   
+
     include __DIR__ . '/../configs/config.php';
-    include __DIR__ . '/../models/studentEntity.php';
+    include __DIR__ . '/../models/StudentEntity.php';
 
     if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-        $students = new studentEntity();
+        $students = new StudentEntity();
         $stmt = $students->findAll();
         if(!empty($stmt)){
-            
-            
+
+
             echo json_encode($stmt);
         }
         else{
